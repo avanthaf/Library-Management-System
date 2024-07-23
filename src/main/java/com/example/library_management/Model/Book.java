@@ -9,7 +9,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="books")
-public class Books {
+public class Book {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -24,10 +24,10 @@ public class Books {
     @Column
     String category;
     
-    public Books() {
+    public Book() {
     }
 
-    public Books(Long id, String bookName, String author, String category) {
+    public Book(Long id, String bookName, String author, String category) {
         this.id = id;
         this.bookName = bookName;
         this.author = author;

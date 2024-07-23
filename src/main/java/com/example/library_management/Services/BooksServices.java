@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.library_management.Model.Books;
+import com.example.library_management.Model.Book;
 import com.example.library_management.Repository.BooksRepository;
 
 @Service
@@ -14,15 +14,15 @@ public class BooksServices {
     @Autowired
     BooksRepository booksRepository;
     
-    public List<Books> getAllBooks(){
+    public List<Book> getAllBooks(){
         return booksRepository.findAll();
     }
 
-    public Books getBookById(Long id){
+    public Book getBookById(Long id){
         return booksRepository.findById(id).orElse(null);
     }
 
-    public Books saveBook(Books book){
+    public Book saveBook(Book book){
         return booksRepository.save(book);
     }
     
